@@ -7,12 +7,11 @@
 
 #ifndef SRC_GAMELOGIC_TERRAIN_CHUNK_CHUNK_H_
 #define SRC_GAMELOGIC_TERRAIN_CHUNK_CHUNK_H_
-
+#include "Tile/Tile.h"
 namespace TerrainUnits {
 
 class Chunk {
-	int heightMap[100][100];
-	int heatMap[100][100];
+	Tile heightMap[10][10];
 public:
 	Chunk();
 	virtual ~Chunk();

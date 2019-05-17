@@ -11,14 +11,14 @@
 namespace Math {
 
 class Position {
-	int x ,y;
+	float height;
 public:
 	Position();
 
-	void setPosition(int,int);
+	void setheight(float);
 
-	const int getX()const;
-	const int getY()const;
+	const int getHeight()const;
+
 
 
 

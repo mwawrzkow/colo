@@ -14,17 +14,14 @@ Position::Position() {
 
 }
 //Setters
-void Position::setPosition(int x , int y){
-	this->x = x;
-	this->y = y;
+void Position::setheight(float  height){
+	this->height = height;
 }
 //getters
-const int Position::getX()const {
-	return x;
+const int Position::getHeight()const {
+	return height;
 }
-const int Position::getY()const{
-	return y;
-}
+
 
 Position::~Position() {
 	// TODO Auto-generated destructor stub

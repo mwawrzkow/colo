@@ -11,8 +11,8 @@
 namespace Math {
 
 class Vector {
-	Position position;
-	Position direction;
+	int xPos, yPos;
+	int xDir, yDir;
 public:
 	Vector();
 	virtual ~Vector();
@@ -20,8 +20,11 @@ public:
 	void setPositionOfVector(int,int);
 	void setDirectionOfVector(int, int);
 	//getters
-	const Position getPosition()const;
-	const Position getDirection()const;
+	const int getxPos()const;
+	const int getyPos()const;
+
+	const int getxDir()const;
+	const int getyDir()const;
 };
 
 } /* namespace Mathvector */

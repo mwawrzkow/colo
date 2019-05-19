@@ -13,12 +13,17 @@
 namespace TerrainUnits {
 
 class Tile {
-	Math::Vector vector;
+	Math::Vector *vector;
 	float heightMap[10][10];
 public:
 	Tile();
-	std::vector<float&> getMatrix();
+	std::vector<float*> getMatrix();
 	virtual ~Tile();
+public:
+	//Vector methods
+	void createVector();
+	void deleteVector();
+	Math::Vector *getVector();
 };
 
 } /* namespace TerrainUnits */

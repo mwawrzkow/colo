@@ -17,11 +17,18 @@ Tile::Tile() {
 Tile::~Tile() {
 	// TODO Auto-generated destructor stub
 }
-std::vector<float&> Tile::getMatrix(){
-	std::vector<float&> e;
-	for(int x = 0; x < 10; x++)
-		for(int y = 0; y < 10; y++)
-			e.push_back(*points[x][y]);
+void createVector(){
+
+}
+void deleteVector(){
+
+}
+Math::Vector* Tile::getVector(){
+	return vector;
+}
+std::vector<float*> Tile::getMatrix(){
+	std::vector<float*> e;
+	return e;
 
 }
 

@@ -7,12 +7,14 @@
 
 #ifndef SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_TILE_H_
 #define SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_TILE_H_
+#include "Vector.h"
 #include <vector>
 
 namespace TerrainUnits {
 
 class Tile {
-	float points[10][10];
+	Math::Vector vector;
+	float heightMap[10][10];
 public:
 	Tile();
 	std::vector<float&> getMatrix();

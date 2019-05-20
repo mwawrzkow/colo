@@ -13,6 +13,9 @@ Chunk::Chunk() {
 	// TODO Auto-generated constructor stub
 
 }
+Tile& Chunk::getTile(int x, int y){
+	return heightMap[x][y];
+}
 
 Chunk::~Chunk() {
 	// TODO Auto-generated destructor stub

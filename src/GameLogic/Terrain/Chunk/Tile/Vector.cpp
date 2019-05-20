@@ -15,6 +15,10 @@ Vector::Vector() {
 }
 //setters
 void Vector::setPositionOfVector(int x, int y) {
+    if(x > 10 | x < 0)
+        throw;
+    else if(y > 10 | y < 0)
+        throw; 
 	this->xPos = x;
 	this->yPos = y;
 }

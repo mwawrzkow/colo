@@ -10,22 +10,22 @@
 #define SRC_GAMELOGIC_TERRAIN_PROCEDURALGENERATOR_TERRAIN_SCRIPTS_GAUSS_H_
 #include "../../../Chunk/Tile/Tile.h"
 #include <math.h>
+#include "vectorMatrix.h"
 namespace Script {
 
-class Gauss {
-    std::vector<float*> array;
+class Gauss :public vectorMatrix {
     float standartDeviation;
-    Math::Vector *vector;
     float sum, avarge;
     void CalculateSum();
     void calStandardDeviation();
-    std::vector<float> gaussresult;
     void result();
 public:
 	Gauss(TerrainUnits::Tile&);
 	virtual ~Gauss();
+public:
     void partGaussCalculation(int,int,int,int);
     float getStandartDeviation();
+    float getavarge();
 };
 
 } /* namespace Script */

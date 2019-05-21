@@ -16,6 +16,7 @@ class TerrainGenerator {
 	Script::Gauss *gauss;
 	std::vector<ChunkPtr> data;
     TerrainUnits::Chunk *ChunkToRender;
+    void test();
 public:
 	void setdata(std::vector<ChunkPtr>);
 	void setChunk(ChunkPtr);

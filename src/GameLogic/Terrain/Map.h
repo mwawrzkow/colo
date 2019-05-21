@@ -13,11 +13,12 @@ namespace Map{
 class Map{
 	Generator::TerrainGenerator gen;
 	std::vector<ChunkPtr> data;
-
+public:
+	Map(ChunkPtr);
 public:
 	 Map();
 
-	virtual ~Map();
+	 ~Map();
 };
     
     

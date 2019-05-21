@@ -2,27 +2,46 @@
 #include <catch2/catch.hpp>
 #include "src/GameLogic/Terrain/Map.h"
 
-TEST_CASE("Testing Generator Engine", "Procedural Generator"){
-    SECTION("Test Tile Class"){
-        TerrainUnits::Tile tile;
-        Math::Vector &vector = *tile.getVector();
-        vector.setPositionOfVector(2,2);
-        vector.setDirectionOfVector(3,3);
-        REQUIRE(tile.getVector()->getxPos() == 2);
-        REQUIRE(tile.getVector()->getxDir() == 3);
-    }
-   SECTION("Test Gauss Class"){
-     TerrainUnits::Tile tile;
-     Math::Vector &vector = *tile.getVector();
-     vector.setDirectionOfVector(0,0);
-     vector.setPositionOfVector(3,4);
-     Script::Gauss gauss(tile);
-     REQUIRE(gauss.getStandartDeviation() == 0);
-    }
-   SECTION("Basic Test for World Generator")
-   {
-	   Map::Map map();
-	   REQUIRE(true);
-   }
-       
+namespace predefinied_sets {
+TerrainUnits::Tile testTile() {
+	TerrainUnits::Tile test;
+	Math::Vector *vec = test.getVector();
+	vec->setDirectionOfVector(0,0);
+	vec->setPositionOfVector(3,3);
+	std::vector<float*> set =  test.getMatrix();
+	for(int i = 0; i < 100; i++)
+	{
+		if(i < 50 )
+			*set[i] = 0.5;
+		else if(i < 100)
+			*set[i] = 1.0;
+	}
+	return test;
+}
+
+}
+
+TEST_CASE("Testing Generator Engine", "Procedural Generator") {
+	SECTION("Test Tile Class") {
+		TerrainUnits::Tile tile;
+		Math::Vector &vector = *tile.getVector();
+		vector.setPositionOfVector(2, 2);
+		vector.setDirectionOfVector(3, 3);
+		REQUIRE(tile.getVector()->getxPos() == 2);
+		REQUIRE(tile.getVector()->getxDir() == 3);
+	}
+}
+TEST_CASE("Algorithms tests", "Script/.."){
+	SECTION("Gauss Algorithm tests") {
+		TerrainUnits::Tile tile = predefinied_sets::testTile();
+		Script::Gauss gauss(tile);
+		REQUIRE(gauss.getavarge() == 0.75f);
+		REQUIRE(gauss.getStandartDeviation() ==0.25f);
+	}
+	SECTION("Vector Algorithm tests")
+	{
+		TerrainUnits::Tile tile = predefinied_sets::testTile();
+
+	}
+
 }

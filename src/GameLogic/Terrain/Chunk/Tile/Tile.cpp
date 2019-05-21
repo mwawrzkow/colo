@@ -30,6 +30,9 @@ Math::Vector* Tile::getVector(){
 }
 std::vector<float*> Tile::getMatrix(){
 	std::vector<float*> e;
+	for(int x = 0 ; x < 10 ; x++)
+		for(int y = 0 ; y < 10 ;y++)
+			e.push_back(&heightMap[x][y]);
 	return e;
 
 }

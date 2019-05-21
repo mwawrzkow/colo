@@ -5,7 +5,7 @@ namespace Map {
 Map::Map() {
 	//
 }
-Map::map(ChunkPtr test){
+Map::Map(ChunkPtr test){
 	std::cerr << "Started Testing Constructor, do not use in final build";
 	gen.setChunk(test);
 }

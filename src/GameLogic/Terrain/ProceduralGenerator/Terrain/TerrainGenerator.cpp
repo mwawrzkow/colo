@@ -26,10 +26,7 @@ void TerrainGenerator::generate() {
 			std::cout << std::endl;
 	}
 }
-void TerrainGenerator::setChunk(ChunkPtr toGenerate, void){
-	this->ChunkToRender = toGenerate.get();
-	test();
-}
+
 
 
 } /* namespace Generator */

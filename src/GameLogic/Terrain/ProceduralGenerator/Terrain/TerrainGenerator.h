@@ -20,8 +20,6 @@ class TerrainGenerator {
 public:
 	void setdata(std::vector<ChunkPtr>);
 	void setChunk(ChunkPtr);
-	void setChunk(ChunkPtr, void);
-
 	void generate();
 };
 

@@ -7,7 +7,6 @@
 
 #ifndef SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_VECTOR_H_
 #define SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_VECTOR_H_
-#include "Math/Position.h"
 namespace Math {
 
 class Vector {

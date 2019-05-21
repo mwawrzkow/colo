@@ -14,7 +14,11 @@ Vector::Vector() {
 
 }
 //setters
-void Vector::setDirectionOfVector(int x, int y) {
+void Vector::setPositionOfVector(int x, int y) {
+    if(x > 10 | x < 0)
+        throw;
+    else if(y > 10 | y < 0)
+        throw; 
 	this->xPos = x;
 	this->yPos = y;
 }
@@ -33,7 +37,7 @@ const int Vector::getyPos() const {
 const int Vector::getxDir() const {
 	return xDir;
 }
-const int Vector::getxDir() const {
+const int Vector::getyDir() const {
 	return yDir;
 }
 Vector::~Vector() {

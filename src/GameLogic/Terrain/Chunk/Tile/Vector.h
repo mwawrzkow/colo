@@ -7,6 +7,7 @@
 
 #ifndef SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_VECTOR_H_
 #define SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_VECTOR_H_
+#include <memory>
 namespace Math {
 
 class Vector {
@@ -25,6 +26,7 @@ public:
 	const int getxDir()const;
 	const int getyDir()const;
 };
+typedef std::shared_ptr<Vector> VectorPtr;
 
 } /* namespace Mathvector */
 

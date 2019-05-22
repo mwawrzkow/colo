@@ -5,7 +5,7 @@
 namespace predefinied_sets {
 TerrainUnits::Tile testTile() {
 	TerrainUnits::Tile test;
-	Math::Vector *vec = test.getVector();
+	Math::VectorPtr vec(test.getVector());
 	vec->setDirectionOfVector(0,0);
 	vec->setPositionOfVector(3,3);
 	std::vector<float*> set =  test.getMatrix();
@@ -24,14 +24,25 @@ TerrainUnits::Tile testTile() {
 TEST_CASE("Testing Generator Engine", "Procedural Generator") {
 	SECTION("Test Tile Class") {
 		TerrainUnits::Tile tile;
-		Math::Vector &vector = *tile.getVector();
-		vector.setPositionOfVector(2, 2);
-		vector.setDirectionOfVector(3, 3);
+		Math::VectorPtr vector(tile.getVector());
+		vector->setPositionOfVector(2, 2);
+		vector->setDirectionOfVector(3, 3);
 		REQUIRE(tile.getVector()->getxPos() == 2);
 		REQUIRE(tile.getVector()->getxDir() == 3);
 	}
 }
 TEST_CASE("Algorithms tests", "Script/.."){
+	SECTION("Vector  Test"){
+		TerrainUnits::Tile T;
+		Math::VectorPtr vector(new Math::Vector);
+		T.setVector(vector);
+		vector->setDirectionOfVector(0,0);
+		vector->setPositionOfVector(1,1);
+		Script::vectorMatrix vM(T.getVector(),T.getMatrix());
+		vM.applyVector(1);
+		REQUIRE(vM.getWeightVector().at(0) == 1);
+		REQUIRE(vM.getWeightVector().at(11) == 0.707106769f);
+	}
 	SECTION("Gauss Algorithm tests") {
 		TerrainUnits::Tile tile = predefinied_sets::testTile();
 		Script::Gauss gauss(tile);

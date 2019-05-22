@@ -13,7 +13,7 @@
 namespace TerrainUnits {
 
 class Tile {
-	Math::Vector *vector;
+	Math::VectorPtr vector;
 	float heightMap[10][10];
 public:
 	Tile();
@@ -22,8 +22,8 @@ public:
 public:
 	//Vector methods
 	void createVector();
-	void deleteVector();
-	Math::Vector *getVector();
+	void setVector(Math::VectorPtr);
+	Math::VectorPtr getVector();
 };
 
 } /* namespace TerrainUnits */

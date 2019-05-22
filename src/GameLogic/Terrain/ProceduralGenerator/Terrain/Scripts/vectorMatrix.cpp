@@ -9,7 +9,8 @@
 
 namespace Script {
 
-vectorMatrix::vectorMatrix(Math::Vector* vector, std::vector<float*> array):vector(vector),array(array) {
+vectorMatrix::vectorMatrix(Math::Vector* vector, std::vector<float*> array) :
+		vector(vector), array(array) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -20,12 +21,12 @@ std::vector<float> vectorMatrix::createVectorMatrix(float vectorStrenght) {
 	std::vector<float> vector;
 
 	//connecting matrix with vector of pointers;
-	for(int x = 0; x <= 9;++x)
-		for(int y = 0; y <= 9; ++y)
+	for (int x = 0; x <= 9; ++x)
+		for (int y = 0; y <= 9; ++y)
 			tmpVector.push_back(&matrix[x][y]);
 
 	//filling matrix with zeros
-	std::fill(*tmpVector.begin(),*tmpVector.end(),0.0f);
+	std::fill(*tmpVector.begin(), *tmpVector.end(), 0.0f);
 
 	//Getting vector variables into local variables
 	int xPos = this->vector->getxPos();
@@ -37,12 +38,13 @@ std::vector<float> vectorMatrix::createVectorMatrix(float vectorStrenght) {
 
 	while (xPos != xDir && yPos != yDir) {
 		matrix[xPos][yPos] = scale
-				* sqrt(1 / (pow((xDir - xPos), 2) * pow((yDir - yPos), 2)) + 1);
-		if(xPos < xDir)
+		matrix[xPos][yPos] = *sqrt(
+				1 / (pow((xDir - xPos), 2) * pow((yDir - yPos), 2)) + 1);
+		if (xPos < xDir)
 			++xPos;
 		else
 			--xPos;
-		if(yPos < yDir )
+		if (yPos < yDir)
 			++yDir;
 		else
 			--yDir;
@@ -50,7 +52,6 @@ std::vector<float> vectorMatrix::createVectorMatrix(float vectorStrenght) {
 	}
 	xPos = this->vector->getxPos();
 	yPos = this->vector->getyPos();
-
 
 	/*     C = (x,y)
 	 *            .
@@ -66,45 +67,62 @@ std::vector<float> vectorMatrix::createVectorMatrix(float vectorStrenght) {
 	 * 		AC = sqrt((xPos - x)^2 + (yPos-y)^2)
 	 * 		CB = sqrt((xDir - x)^2 + (yDir - y)^2)
 	 */
-	for(int x = 0 ; x <= 9; ++x)
-		for(int y = 0; y <= 9; ++y)
-		{
-			float AB = sqrt(pow((xPos-xDir),2)+pow(yPos- yDir,2));
-			float AC = sqrt(pow((xPos-x),2)+pow((yPos-y),2));
-			float CB = sqrt(pow((xDir - x),2)+pow((yDir - y),2));
+	for (int x = 0; x <= 9; ++x)
+		for (int y = 0; y <= 9; ++y) {
+			float AB = sqrt(pow((xPos - xDir), 2) + pow(yPos - yDir, 2));
+			float AC = sqrt(pow((xPos - x), 2) + pow((yPos - y), 2));
+			float CB = sqrt(pow((xDir - x), 2) + pow((yDir - y), 2));
 			float circuit = AB + AC + CB;
-			circuit/=2;
-			float surface = sqrt(circuit*(circuit-AB)*(circuit-AC)*(circuit-CB));
+			circuit /= 2;
+			float surface = sqrt(
+					circuit * (circuit - AB) * (circuit - AC) * (circuit - CB));
 			/*
 			 * P = 1/2 * h * AB
 			 * 2P = h * AB
 			 * 2P / AB = h
 			 */
-			float distance = (surface *2) / AB; // H
-			/*
-			 *    C(x,y)
-			 *     /*
-			 *    / |
-			 *   *--*----*
-			 *     X   Z
-			 *
-			 *     X^2 + H^2 = AC^2
-			 *     X^2 = AC^2 - H^2
-			 *     X = sqrt(AC^2 - H^2)
-			 *
-			 *    int xvalue =  xPos + xDir * X/Z;
-			 *    iny yvalue = yPos + yDir * X/Z;
-			 *   vector AB
-			 */
-			float X = sqrt(pow(AC,2)- pow(distance,2));
-			float Z = sqrt(pow(AB,2)- pow(distance,2));
-			int xValue = xPos + xDir * X/Z;
-			int yValue = yPos + yDir * X/Z;
 
-			matrix[x][y]=pow(distance,-1*vectorStrenght) * matrix[xValue][yValue];
+			float distance = (surface * 2) / AB; // H
+			int xValue;
+			int yValue;
+			if (distance < AC)
+				if (distance < CB) {
+					/*
+					 *    C(x,y)
+					 *     /*
+					 *    / |
+					 *   *--*----*
+					 *     X   Z
+					 *
+					 *     X^2 + H^2 = AC^2
+					 *     X^2 = AC^2 - H^2
+					 *     X = sqrt(AC^2 - H^2)
+					 *
+					 *    int xvalue =  xPos + xDir * X/Z;
+					 *    iny yvalue = yPos + yDir * X/Z;
+					 *   vector AB
+					 */
+					float X = sqrt(pow(AC, 2) - pow(distance, 2));
+					float Z = sqrt(pow(AB, 2) - pow(distance, 2));
+					xValue = xPos + xDir * X / Z;
+					yValue = yPos + yDir * X / Z;
+
+				} else {
+					distance = CB;
+					xValue = xDir;
+					yValue = yDir;
+				}
+			else {
+				distance = AC;
+				xValue = xPos;
+				yValue = yPos;
+			}
+
+			matrix[x][y] = pow(distance, -1 * vectorStrenght)
+					* matrix[xValue][yValue];
 		}
-	for(int x = 0; x<= 9;++x)
-		for(int y = 0; y <= 9;++y)
+	for (int x = 0; x <= 9; ++x)
+		for (int y = 0; y <= 9; ++y)
 			vector.push_back(matrix[x][y]);
 	return vector;
 }

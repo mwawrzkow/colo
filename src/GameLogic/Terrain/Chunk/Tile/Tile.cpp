@@ -17,16 +17,16 @@ Tile::Tile() {
 
 Tile::~Tile() {
 	// TODO Auto-generated destructor stub
-    delete vector;
 }
 void Tile::createVector(){
-vector = new Math::Vector;
+	if(vector == nullptr)
+		vector = Math::VectorPtr(new Math::Vector);
 }
-void Tile::deleteVector(){
-delete vector;
-}
-Math::Vector* Tile::getVector(){
+Math::VectorPtr Tile::getVector(){
 	return vector;
+}
+void Tile::setVector(Math::VectorPtr ptr){
+	vector = ptr;
 }
 std::vector<float*> Tile::getMatrix(){
 	std::vector<float*> e;

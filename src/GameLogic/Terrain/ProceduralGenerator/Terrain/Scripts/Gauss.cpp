@@ -32,14 +32,14 @@ void Gauss::calStandardDeviation() {
 	for (float &e : diferences)
 		standardDeviation += pow(e, 2);
 	this->standartDeviation = sqrt(standardDeviation) / 10;
-	result();
+	getResult();
 }
-void Gauss::result() {
+void Gauss::getResult() {
 	for (float*e : array) {
 		float toexp;
 		toexp = 1 / (standartDeviation * sqrt(2 * M_PI));
 		toexp *= exp((-1 * *e - avarge) / (2 * pow(standartDeviation, 2)));
-		gaussresult.push_back(toexp);
+		result.push_back(toexp);
 	}
 
 }
@@ -47,7 +47,7 @@ void Gauss::result() {
 void Gauss::partGaussCalculation(int startx, int starty, int endx, int endy) {
 	for (int e = startx; e <= endx; e++) {
 		for (int z = starty; z <= endy; z++) {
-			*array.at(e + z) = gaussresult.at(e + z);
+			*array.at(e + z) = result.at(e + z);
 		}
 	}
 

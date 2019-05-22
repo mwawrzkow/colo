@@ -18,7 +18,7 @@ class Gauss :public vectorMatrix {
     float sum, avarge;
     void CalculateSum();
     void calStandardDeviation();
-    void result();
+    void getResult();
 public:
 	Gauss(TerrainUnits::Tile&);
 	virtual ~Gauss();

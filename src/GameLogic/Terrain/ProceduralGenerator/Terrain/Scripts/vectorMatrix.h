@@ -10,17 +10,21 @@
 #include <vector>
 #include <math.h>
 #include "../../../Chunk/Tile/Vector.h"
+
 namespace Script {
 
 class vectorMatrix {
-	Math::Vector *vector;
-	std::vector<float> createVectorMatrix(float vectorStrenght);
+	Math::VectorPtr vector;
+	std::vector<float> vectorWeight;
+	void createVectorMatrix(float vectorStrenght);
+	bool isObtuse(float,float,float);
 public:
-	vectorMatrix(Math::Vector*,std::vector<float*>);
+	vectorMatrix(Math::VectorPtr,std::vector<float*>);
 	void applyVector(float);
+	std::vector<float> getWeightVector();
 	virtual ~vectorMatrix();
 public:
-	std::vector<float> gaussresult;
+	std::vector<float> result;
 	std::vector<float*> array;
 
 };

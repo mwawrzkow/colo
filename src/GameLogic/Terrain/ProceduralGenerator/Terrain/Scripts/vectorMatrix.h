@@ -12,6 +12,11 @@
 #include "../../../Chunk/Tile/Vector.h"
 
 namespace Script {
+namespace Hidden{
+struct Pos{
+	int x; int y;
+};
+}
 
 class vectorMatrix {
 	Math::VectorPtr vector;

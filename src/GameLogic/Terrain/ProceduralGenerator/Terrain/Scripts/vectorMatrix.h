@@ -17,7 +17,8 @@ class vectorMatrix {
 	Math::VectorPtr vector;
 	std::vector<float> vectorWeight;
 	void createVectorMatrix(float vectorStrenght);
-	bool isObtuse(float,float,float);
+	bool isObtuse(float,float,float)const;
+	bool isRectangular(float,float,float)const;
 public:
 	vectorMatrix(Math::VectorPtr,std::vector<float*>);
 	void applyVector(float);

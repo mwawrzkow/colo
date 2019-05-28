@@ -30,16 +30,18 @@ void vectorMatrix::createVectorMatrix(float vectorStrenght) {
 	do {
 		matrix[xPos][yPos] = scale
 				* sqrt(1 / (pow((xDir - xPos), 2) * pow((yDir - yPos), 2) + 1 ));
-		if (xPos < xDir)
+		if(xPos == xDir){}
+		else if (xPos < xDir)
 			++xPos;
 		else
 			--xPos;
-		if (yPos < yDir)
+		if(yPos == yDir){}
+		else if (yPos < yDir)
 			++yPos;
 		else
 			--yPos;
 
-	}while(pow(xPos - xDir,2) == 0 && pow(yPos - yDir,2) == 0);
+	}while(pow(xPos - xDir,2) != 0 || pow(yPos - yDir,2) != 0);
 	xPos = this->vector->getxPos();
 	yPos = this->vector->getyPos();
 
@@ -73,9 +75,10 @@ void vectorMatrix::createVectorMatrix(float vectorStrenght) {
 			 */
 
 			float distance = (surface * 2) / AB; // H
+
 			int xValue;
 			int yValue;
-			if(!isObtuse(AB,AC,CB)) {
+			if(!isObtuse(AB,AC,CB) && surface != 0&& !isRectangular(AB,CB,AC)) {
 					/*
 					 *    C(x,y)
 					 *     /*
@@ -123,13 +126,22 @@ void vectorMatrix::applyVector(float vectorStrenght) {
 	createVectorMatrix(vectorStrenght);
 
 }
-bool vectorMatrix::isObtuse(float a ,float b ,float c){
+bool vectorMatrix::isObtuse(float a ,float b ,float c)const{
 	if(pow(a,2)+pow(b,2) < pow(c,2))
 		return true;
 	if(pow(a,2)+ pow(c,2) < pow(b,2))
 		return true;
 	return false;
 
+}
+bool vectorMatrix::isRectangular(float a, float b, float c)const{
+	if(pow(a,2)+pow(b,2) == pow(c,2))
+		return true;
+	if(pow(b,2)+pow(c,2) == pow(a,2))
+		return true;
+	if(pow(a,2) + pow(c,2) == pow(b,2))
+		return true;
+	return false;
 }
 vectorMatrix::~vectorMatrix() {
 	// TODO Auto-generated destructor stub

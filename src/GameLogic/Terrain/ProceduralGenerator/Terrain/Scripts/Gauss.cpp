@@ -9,8 +9,7 @@
 #include <math.h>
 namespace Script {
 
-Gauss::Gauss(TerrainUnits::Tile &Tile) :
-		vectorMatrix(Tile.getVector(), Tile.getMatrix()) {
+Gauss::Gauss(TerrainUnits::Tile &Tile) {
 	CalculateSum();
 }
 

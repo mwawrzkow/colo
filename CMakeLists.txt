@@ -8,6 +8,7 @@ add_library(Map
 	src/GameLogic/Terrain/Chunk/Chunk.cpp
 	src/GameLogic/Terrain/ProceduralGenerator/Terrain/Scripts/Gauss.cpp
 	src/GameLogic/Terrain/ProceduralGenerator/Terrain/Scripts/vectorMatrix.cpp
+	src/GameLogic/Terrain/ProceduralGenerator/Terrain/Scripts/Functions.cpp
 	src/GameLogic/Terrain/ProceduralGenerator/Terrain/TerrainGenerator.cpp
 )
 

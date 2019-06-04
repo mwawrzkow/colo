@@ -15,6 +15,7 @@ namespace Script {
 namespace Hidden{
 struct Pos{
 	int x; int y;
+	float height;
 };
 }
 
@@ -25,7 +26,7 @@ class vectorMatrix {
 	bool isObtuse(float,float,float)const;
 	bool isRectangular(float,float,float)const;
 public:
-	vectorMatrix(Math::VectorPtr,std::vector<float*>);
+	void set(Math::VectorPtr,std::vector<float*>);
 	void applyVector(float);
 	std::vector<float> getWeightVector();
 	virtual ~vectorMatrix();

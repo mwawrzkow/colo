@@ -18,6 +18,7 @@ class Tile {
 public:
 	Tile();
 	std::vector<float*> getMatrix();
+	bool exist();
 	virtual ~Tile();
 public:
 	//Vector methods

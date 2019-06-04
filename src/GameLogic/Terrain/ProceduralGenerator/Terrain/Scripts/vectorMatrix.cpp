@@ -6,18 +6,30 @@
  */
 
 #include "vectorMatrix.h"
+#include "iostream"
+#include "iomanip"
 
 namespace Script {
 
-vectorMatrix::vectorMatrix(Math::VectorPtr vector, std::vector<float*> array) :
-		vector(vector), array(array) {
+void vectorMatrix::set(Math::VectorPtr vector, std::vector<float*> array) {
+	this->vector = vector;
+	this->array = array;
 
 }
 void vectorMatrix::createVectorMatrix(float vectorStrenght) {
 	float matrix[10][10] = { };
-
-	//vectors for linear interpretation of matrix
-	std::vector<float> vector;
+	{
+		int x = 0, y = 0;
+		for (auto it = array.begin(); it < array.end(); ++it) {
+			matrix[x][y] = **it;
+			++y;
+			if(y == 10)
+			{
+				y = 0;
+				++x;
+			}
+		}
+	}
 
 	//Getting vector variables into local variables
 	int xPos = this->vector->getxPos();
@@ -31,6 +43,8 @@ void vectorMatrix::createVectorMatrix(float vectorStrenght) {
 		Hidden::Pos tmp;
 		tmp.x = xPos;
 		tmp.y = yPos;
+		float distance = sqrt(pow(tmp.x - xDir, 2) + pow(tmp.y - yDir, 2));
+		tmp.height = scale / (distance);
 		points.push_back(tmp);
 		if (xPos == xDir) { /*Intentionally empty*/
 		} else if (xPos > xDir)
@@ -42,32 +56,32 @@ void vectorMatrix::createVectorMatrix(float vectorStrenght) {
 			yPos--;
 		else
 			yPos++;
-		float distance = sqrt(pow(tmp.x - xDir, 2) + pow(tmp.y - yDir, 2));
-		matrix[tmp.x][tmp.y] = scale / (distance);
 	} while (xPos != xDir || yDir != yPos);
 	xPos = this->vector->getxPos();
 	yPos = this->vector->getyPos();
 	for (int x = 0; x <= 9; ++x)
 		for (int y = 0; y <= 9; ++y) {
 			float distance = 9999999;
-			int xValue = 99999999, yValue = 999999;
+			float value = 0;
 			for (auto it = points.begin(); it < points.end(); it++) {
 				float tmp_Distance = sqrt(
 						pow(x - it->x, 2) + pow(y - it->y, 2));
 				if (tmp_Distance < distance) {
 					distance = tmp_Distance;
-					xValue = it->x;
-					yValue = it->y;
+					value = it->height;
 				}
 			}
-			if (matrix[x][y] == 0)
-				matrix[x][y] = matrix[xValue][yValue] / (pow(distance, vectorStrenght) + 1);
+			matrix[x][y] *= value / (pow(distance, vectorStrenght) + 1);
 		}
-	for (int x = 0; x <= 9; ++x)
-		for (int y = 0; y <= 9; ++y)
-			vector.push_back(matrix[x][y]);
+	int index = 0;
+	for (int x = 0; x < 10; ++x) {
+		for (int y = 0; y < 10; ++y) {
+			matrix[x][y] = round(matrix[x][y] * 1000) / 1000.f;
+			*array.at(index) = matrix[x][y];
+			index++;
+		}
+	}
 
-	this->vectorWeight = vector;
 }
 std::vector<float> vectorMatrix::getWeightVector() {
 	return vectorWeight;

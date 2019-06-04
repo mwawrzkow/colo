@@ -10,17 +10,22 @@
 #include <memory>
 #include "Scripts/Gauss.h"
 #include "../../Chunk/Chunk.h"
+#include "Scripts/Functions.h"
+#include <map>
 namespace Generator {
 
 class TerrainGenerator {
+	Script::vectorMatrix applyVector;
 	Script::Gauss *gauss;
 	std::vector<ChunkPtr> data;
     TerrainUnits::Chunk *ChunkToRender;
+    float (*hill)(int,int,float,float,float) = terrainfunctions::hill;
     void test();
 public:
 	void setdata(std::vector<ChunkPtr>);
 	void setChunk(ChunkPtr);
-	void generate();
+	void rawGenerate();
+	void Generate();
 };
 
 } /* namespace Generator */

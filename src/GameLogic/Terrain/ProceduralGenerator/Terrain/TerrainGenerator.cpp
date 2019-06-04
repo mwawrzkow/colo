@@ -17,13 +17,24 @@ void TerrainGenerator::setChunk(ChunkPtr toGenerate) {
 	this->ChunkToRender = toGenerate.get();
 }
 void TerrainGenerator::rawGenerate() {
+	for (int x = 0; x < 10; ++x) {
+		TerrainUnits::Tile &tile = ChunkToRender->getTile(x, 0);
+		rawGenerate(tile);
+	}
+	for (int y = 0; y < 10; ++y) {
+		TerrainUnits::Tile &tile = ChunkToRender->getTile(0, y);
+		rawGenerate(tile);
+	}
+	inChunkGenerate();
+
+}
+void TerrainGenerator::rawGenerate(TerrainUnits::Tile &tile) {
 	int x = 0, y = 0;
 
 	float a = ((rand() % 1000) + 1) / 100.0f;
 	float b = ((rand() % 1000) + 1) / 100.0f;
 	float c = ((rand() % 1000) + 1) / 100.0f;
 
-	TerrainUnits::Tile &tile = ChunkToRender->getTile(0, 0);
 	Math::VectorPtr tileVector(new Math::Vector);
 
 	tileVector->setPositionOfVector(rand() % 10, rand() % 10);
@@ -47,16 +58,27 @@ void TerrainGenerator::rawGenerate() {
 			break;
 	} while (true);
 	applyVector.applyVector(((rand() % 10) + 1) / 4.f);
-	Generate();
 }
-void TerrainGenerator::Generate() {
+void TerrainGenerator::inChunkGenerate() {
 	TerrainUnits::Tile array[10][10] = { };
-	for (int x = 0; x < 10; ++x) {
-		for (int y = 0; y < 10; ++y) {
-
+	{
+		int x = 0, y = 0;
+		for (auto it = data.begin(); it < data.end(); ++it) {
+			array[x][y] = *it;
+			++y;
+			if (y == 10) {
+				y = 0;
+				++x;
+			}
 		}
 	}
+	for(int x = 1 ; x < 10; ++x)
+		for(int y = 1 ; x < 10 ; ++y)
+		{
 
+
+
+		}
 }
 
 } /* namespace Generator */

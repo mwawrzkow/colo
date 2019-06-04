@@ -21,11 +21,12 @@ class TerrainGenerator {
     TerrainUnits::Chunk *ChunkToRender;
     float (*hill)(int,int,float,float,float) = terrainfunctions::hill;
     void test();
+	void rawGenerate(TerrainUnits::Tile &tile);
 public:
 	void setdata(std::vector<ChunkPtr>);
 	void setChunk(ChunkPtr);
-	void rawGenerate();
-	void Generate();
+    void rawGenerate();
+	void inChunkGenerate();
 };
 
 } /* namespace Generator */

@@ -38,7 +38,8 @@ TEST_CASE("Algorithms tests", "Script/.."){
 		T.setVector(vector);
 		vector->setDirectionOfVector(0,0);
 		vector->setPositionOfVector(1,1);
-		Script::vectorMatrix vM(T.getVector(),T.getMatrix());
+		Script::vectorMatrix vM;
+		vM.set(T.getVector(),T.getMatrix());
 		vM.applyVector(1);
 		REQUIRE(vM.getWeightVector().at(0) == 1);
 		REQUIRE(vM.getWeightVector().at(11) == 0.707106769f);

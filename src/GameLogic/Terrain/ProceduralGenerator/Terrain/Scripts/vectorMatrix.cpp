@@ -6,18 +6,30 @@
  */
 
 #include "vectorMatrix.h"
+#include "iostream"
+#include "iomanip"
 
 namespace Script {
 
-vectorMatrix::vectorMatrix(Math::VectorPtr vector, std::vector<float*> array) :vector(vector), array(array) {
+void vectorMatrix::set(Math::VectorPtr vector, std::vector<float*> array) {
+	this->vector = vector;
+	this->array = array;
 
 }
 void vectorMatrix::createVectorMatrix(float vectorStrenght) {
-	float matrix[10][10] ={};
-
-	//vectors for linear interpretation of matrix
-	std::vector<float> vector;
-
+	float matrix[10][10] = { };
+	{
+		int x = 0, y = 0;
+		for (auto it = array.begin(); it < array.end(); ++it) {
+			matrix[x][y] = **it;
+			++y;
+			if(y == 10)
+			{
+				y = 0;
+				++x;
+			}
+		}
+	}
 
 	//Getting vector variables into local variables
 	int xPos = this->vector->getxPos();
@@ -26,113 +38,77 @@ void vectorMatrix::createVectorMatrix(float vectorStrenght) {
 	int yDir = this->vector->getyDir();
 	//scalar
 	float scale = vectorStrenght;
-
+	std::vector<Hidden::Pos> points;
 	do {
-		matrix[xPos][yPos] = scale
-				* sqrt(1 / (pow((xDir - xPos), 2) * pow((yDir - yPos), 2) + 1 ));
-		if (xPos < xDir)
-			++xPos;
+		Hidden::Pos tmp;
+		tmp.x = xPos;
+		tmp.y = yPos;
+		float distance = sqrt(pow(tmp.x - xDir, 2) + pow(tmp.y - yDir, 2));
+		tmp.height = scale / (distance);
+		points.push_back(tmp);
+		if (xPos == xDir) { /*Intentionally empty*/
+		} else if (xPos > xDir)
+			xPos--;
 		else
-			--xPos;
-		if (yPos < yDir)
-			++yPos;
+			xPos++;
+		if (yPos == yDir) {/*Intentionally empty*/
+		} else if (yPos > yDir)
+			yPos--;
 		else
-			--yPos;
-
-	}while(pow(xPos - xDir,2) == 0 && pow(yPos - yDir,2) == 0);
+			yPos++;
+	} while (xPos != xDir || yDir != yPos);
 	xPos = this->vector->getxPos();
 	yPos = this->vector->getyPos();
-
-	/*     C = (x,y)
-	 *            .
-	 *            /\
-	 * 			 /  \
-	 *          /    \
-	 * 		   /      \
-	 * 		  /        \
-	 * 		 *----------*
-	 * 		A			B
-	 *
-	 * 		AB = sqrt((xPos - xDir)^2 + (yPos-yDir)^2)
-	 * 		AC = sqrt((xPos - x)^2 + (yPos-y)^2)
-	 * 		CB = sqrt((xDir - x)^2 + (yDir - y)^2)
-	 */
 	for (int x = 0; x <= 9; ++x)
 		for (int y = 0; y <= 9; ++y) {
-			float AB = sqrt(pow((xPos - xDir), 2) + pow(yPos - yDir, 2));
-			float AC = sqrt(pow((xPos - x), 2) + pow((yPos - y), 2));
-			float CB = sqrt(pow((xDir - x), 2) + pow((yDir - y), 2));
-			float circuit = AB + AC + CB;
-			circuit /= 2;
-			float surface = sqrt(
-					circuit * (circuit - AB) * (circuit - AC) * (circuit - CB));
-			/*
-			 * P = 1/2 * h * AB
-			 * 2P = h * AB
-			 * 2P / AB = h
-			 */
-
-			float distance = (surface * 2) / AB; // H
-			int xValue;
-			int yValue;
-			if(!isObtuse(AB,AC,CB)) {
-					/*
-					 *    C(x,y)
-					 *     /*
-					 *    / |
-					 *   *--*----*
-					 *     X   Z
-					 *
-					 *     X^2 + H^2 = AC^2
-					 *     X^2 = AC^2 - H^2
-					 *     X = sqrt(AC^2 - H^2)
-					 *
-					 *    int xvalue =  xPos + xDir * X/Z;
-					 *    iny yvalue = yPos + yDir * X/Z;
-					 *   vector AB
-					 */
-					float X = sqrt(pow(AC, 2) - pow(distance, 2));
-					float Z = sqrt(pow(AB, 2) - pow(distance, 2));
-					xValue = xPos + xDir * X / Z;
-					yValue = yPos + yDir * X / Z;
-
-				} else if(CB < AC){
-					distance = CB;
-					xValue = xDir;
-					yValue = yDir;
+			float distance = 9999999;
+			float value = 0;
+			for (auto it = points.begin(); it < points.end(); it++) {
+				float tmp_Distance = sqrt(
+						pow(x - it->x, 2) + pow(y - it->y, 2));
+				if (tmp_Distance < distance) {
+					distance = tmp_Distance;
+					value = it->height;
 				}
-			else {
-				distance = AC;
-				xValue = xPos;
-				yValue = yPos;
 			}
-			if(matrix[x][y] == 0.0f )
-			matrix[x][y] = 1/(pow(distance, vectorStrenght)+1)
-					* matrix[xValue][yValue];
+			matrix[x][y] *= value / (pow(distance, vectorStrenght) + 1);
 		}
-	for (int x = 0; x <= 9; ++x)
-		for (int y = 0; y <= 9; ++y)
-			vector.push_back(matrix[x][y]);
+	int index = 0;
+	for (int x = 0; x < 10; ++x) {
+		for (int y = 0; y < 10; ++y) {
+			matrix[x][y] = round(matrix[x][y] * 1000) / 1000.f;
+			*array.at(index) = matrix[x][y];
+			index++;
+		}
+	}
 
-	this->vectorWeight= vector;
 }
-std::vector<float> vectorMatrix::getWeightVector(){
+std::vector<float> vectorMatrix::getWeightVector() {
 	return vectorWeight;
 }
 void vectorMatrix::applyVector(float vectorStrenght) {
 	createVectorMatrix(vectorStrenght);
 
 }
-bool vectorMatrix::isObtuse(float a ,float b ,float c){
-	if(pow(a,2)+pow(b,2) < pow(c,2))
+bool vectorMatrix::isObtuse(float a, float b, float c) const {
+	if (pow(a, 2) + pow(b, 2) < pow(c, 2))
 		return true;
-	if(pow(a,2)+ pow(c,2) < pow(b,2))
+	if (pow(a, 2) + pow(c, 2) < pow(b, 2))
 		return true;
 	return false;
 
 }
+bool vectorMatrix::isRectangular(float a, float b, float c) const {
+	if (pow(a, 2) + pow(b, 2) == pow(c, 2))
+		return true;
+	if (pow(b, 2) + pow(c, 2) == pow(a, 2))
+		return true;
+	if (pow(a, 2) + pow(c, 2) == pow(b, 2))
+		return true;
+	return false;
+}
 vectorMatrix::~vectorMatrix() {
-	// TODO Auto-generated destructor stub
+// TODO Auto-generated destructor stub
 }
 
 } /* namespace Script */

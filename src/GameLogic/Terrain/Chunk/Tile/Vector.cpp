@@ -15,16 +15,16 @@ Vector::Vector() {
 }
 //setters
 void Vector::setPositionOfVector(int x, int y) {
-    if(x > 10 | x < 0)
+    if(x > 10 || x < 0)
         throw;
-    else if(y > 10 | y < 0)
+    else if(y > 10 || y < 0)
         throw; 
-	this->xPos = x;
-	this->yPos = y;
+	xPos = x;
+	yPos = y;
 }
 void Vector::setDirectionOfVector(int x, int y) {
-	this->xDir = x;
-	this->yDir = y;
+	xDir = x;
+	yDir = y;
 }
 
 //getters

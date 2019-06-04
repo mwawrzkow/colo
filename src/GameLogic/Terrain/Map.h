@@ -8,17 +8,19 @@
 #include <vector>
 #include "Chunk/Chunk.h"
 #include "ProceduralGenerator/Terrain/TerrainGenerator.h"
+#include <map>
 namespace Map{
     
 class Map{
 	Generator::TerrainGenerator gen;
-	std::vector<ChunkPtr> data;
+	std::map<int,std::map<int,ChunkPtr>> map;
 public:
 	Map(ChunkPtr);
 public:
 	 Map();
 
 	 ~Map();
+protected:
 };
     
     

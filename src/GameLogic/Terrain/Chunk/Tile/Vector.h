@@ -8,11 +8,14 @@
 #ifndef SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_VECTOR_H_
 #define SRC_GAMELOGIC_TERRAIN_CHUNK_TILE_VECTOR_H_
 #include <memory>
+#include <limits>
 namespace Math {
 
 class Vector {
-	int xPos, yPos;
-	int xDir, yDir;
+	int xPos = std::numeric_limits<int>::max();
+	int yPos = std::numeric_limits<int>::max();
+	int xDir = std::numeric_limits<int>::max();
+	int yDir = std::numeric_limits<int>::max();
 public:
 	Vector();
 	virtual ~Vector();

@@ -36,5 +36,16 @@ std::vector<float*> Tile::getMatrix(){
 	return e;
 
 }
+bool Tile::exist(){
+	if (vector->getxDir() == std::numeric_limits<int>::max())
+		return true;
+	if (vector->getxPos() == std::numeric_limits<int>::max())
+		return true;
+	if (vector->getyDir() == std::numeric_limits<int>::max())
+		return true;
+	if (vector->getyPos() == std::numeric_limits<int>::max())
+		return true;
+	return false;
+}
 
 } /* namespace TerrainUnits */

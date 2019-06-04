@@ -64,7 +64,7 @@ void TerrainGenerator::inChunkGenerate() {
 	{
 		int x = 0, y = 0;
 		for (auto it = data.begin(); it < data.end(); ++it) {
-			array[x][y] = **it;
+			array[x][y] = *it;
 			++y;
 			if (y == 10) {
 				y = 0;

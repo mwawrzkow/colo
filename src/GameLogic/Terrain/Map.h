@@ -13,7 +13,7 @@ namespace Map{
     
 class Map{
 	Generator::TerrainGenerator gen;
-	std::map<int,std::map<int,ChunkPtr>> map;
+	std::map<std::pair<int,int>,ChunkPtr> map;
 public:
 	Map(ChunkPtr);
 public:

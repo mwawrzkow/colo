@@ -60,11 +60,10 @@ void TerrainGenerator::rawGenerate(TerrainUnits::Tile &tile) {
 	applyVector.applyVector(((rand() % 10) + 1) / 4.f);
 }
 void TerrainGenerator::inChunkGenerate() {
-	TerrainUnits::Tile array[10][10] = { };
 	{
 		int x = 0, y = 0;
 		for (auto it = data.begin(); it < data.end(); ++it) {
-			array[x][y] = *it;
+			ChunkPtr ptr(*it);
 			++y;
 			if (y == 10) {
 				y = 0;

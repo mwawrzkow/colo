@@ -1,0 +1,3 @@
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/buildd/CMakeFiles/rebuild_cache.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/buildd/CMakeFiles/Colonization.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/buildd/CMakeFiles/edit_cache.dir

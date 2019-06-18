@@ -20,11 +20,15 @@ enum Weather{
 	foggy
 
 };
-
+enum pixeltype{
+	Water,
+	hill,
+	field
+};
 class Map {
 	const int x;
 	const int y;
-	std::map<std::pair<int,int>,float>heightMap;
+	std::map<std::pair<int,int>,float>heightMap; // @suppress("Symbol is resolved")
 	FastNoise noise;
 	float waterLevel = 0.05;
 	const float hillLevel = 0.5;

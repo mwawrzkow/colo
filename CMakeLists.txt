@@ -5,7 +5,10 @@ add_library(Noise
 			FastNoise.cpp)
 
 add_library(World 
-			src/GameLogic/Map/Map.cpp)
+			src/GameLogic/Map/Map.cpp
+			src/GameLogic/DeadNature/Ore.cpp
+			src/GameLogic/DeadNature/Tree.cpp
+			src/GameLogic/GameLogic.cpp)
 
 add_executable(Colonization main.cpp)
 

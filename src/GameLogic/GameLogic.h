@@ -18,7 +18,7 @@ namespace GameLogic {
 class GameLogic {
 	World::Map World;
 	std::vector<DeadNature::Ore>Ores;
-	std::vector<DeadNature::Tree>Trees;
+	std::map<std::pair<int,int>,DeadNature::Tree>Trees;
 public:
 	GameLogic(const int, const int, float , const float);
 	virtual ~GameLogic();

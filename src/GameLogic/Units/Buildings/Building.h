@@ -12,8 +12,10 @@ namespace Buildings {
 
 class Building {
 	int health, x, y;
+	float Iron = { }, Copper = { }, Gold = { }, Diamond = { }, Chrome = { },
+			Ethyrald = { }, Uran = { }, Coal = { }, Magnesium = { }, Wood = {};
 public:
-	Building(int,int, int);
+	Building(int,int,int);
 	void dealDamage(int);
 	const int getHealth()const;
 	virtual ~Building();

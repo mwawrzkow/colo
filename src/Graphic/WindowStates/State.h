@@ -11,7 +11,6 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <string>
 #include <vector>
-#include "../GameLogic/Snake/GameController.h"
 #include "LoadSprite/ObjectInterface.h"
 #include "WindowStates.h"
 #include "LoadSprite/RenderClass.h"
@@ -38,7 +37,6 @@ public:
 	virtual GameState::State AskedState();
 public:
 	//Additional funcionation for Snake
-	virtual void update(Unit::move)=0;
 };
 
 } /* namespace Controller */

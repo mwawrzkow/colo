@@ -14,7 +14,8 @@ add_library(Players
 
 add_library(Buildings 
 			src/GameLogic/Units/Buildings/Building.cpp
-			src/GameLogic/Units/Buildings/Home.cpp)		
+			src/GameLogic/Units/Buildings/Home.cpp
+			src/GameLogic/Units/Buildings/Mine.cpp)		
 
 add_executable(Colonization main.cpp)
 

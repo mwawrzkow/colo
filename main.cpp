@@ -2,22 +2,14 @@
 #include <cstdlib>
 #include <time.h>
 #include <iomanip>
-#include "src/GameLogic/Map/Map.h"
+#include "src/GameLogic/GameLogic.h"
 
 int main()
 {
 	std::cerr << "Here Magic Begins" << std::endl;
 	srand(time(NULL));
-	World::Map map(1000,15);
-	int width = map.getWidth(), height = map.getHeight();
-	for(int x = 0; x < width; ++x){
-		for(int y = 0; y < height; ++y)
-		{
-			std::cerr <<std::setw(15)<<map.getPointValue(x,y) ;
-		}
-		std::cerr << std::endl;
-	}
-
+	GameLogic::GameLogic logic(1000,1000,0.02f,0.5);
+	std::cerr << "Done";
 
 	return 0;
 }

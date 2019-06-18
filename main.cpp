@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <time.h>
 #include <iomanip>
-#include "src/GameLogic/Map.h"
+#include "src/GameLogic/Map/Map.h"
 
 int main()
 {

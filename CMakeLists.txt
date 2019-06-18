@@ -5,7 +5,7 @@ add_library(Noise
 			FastNoise.cpp)
 
 add_library(World 
-			src/GameLogic/Map.cpp)
+			src/GameLogic/Map/Map.cpp)
 
 add_executable(Colonization main.cpp)
 

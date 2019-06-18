@@ -18,8 +18,9 @@ class Home : public Building{
 	int width, height;
 	int citizens;
 public:
-	Home(homeSize);
+	Home(homeSize,int,int);
 	virtual ~Home();
+	const int getCitizens() const;
 };
 
 } /* namespace DeadNature */

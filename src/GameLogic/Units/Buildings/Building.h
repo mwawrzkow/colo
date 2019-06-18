@@ -7,14 +7,18 @@
 
 #ifndef SRC_GAMELOGIC_UNITS_BUILDINGS_BUILDING_H_
 #define SRC_GAMELOGIC_UNITS_BUILDINGS_BUILDING_H_
-
+#include <map>
 namespace Buildings {
 
 class Building {
-	int health;
+	int health, x, y;
 public:
-	Building(int);
+	Building(int,int, int);
+	void dealDamage(int);
+	const int getHealth()const;
 	virtual ~Building();
+	bool isRuin();
+	const std::pair<int,int> getPosition();
 };
 
 } /* namespace Buildings */

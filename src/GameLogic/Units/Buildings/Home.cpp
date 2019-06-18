@@ -9,8 +9,8 @@
 
 namespace Buildings {
 
-Home::Home(homeSize size) :
-		size(size),Building(180) {
+Home::Home(homeSize size,int x, int y) :
+		size(size),Building(180,x,y) {
 	switch (size) {
 	case homeSize::small:
 		width = 2;
@@ -30,7 +30,9 @@ Home::Home(homeSize size) :
 	}
 
 }
-
+const int Home::getCitizens()const{
+	return citizens;
+}
 Home::~Home() {
 	// TODO Auto-generated destructor stub
 }

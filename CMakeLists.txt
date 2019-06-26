@@ -14,12 +14,11 @@ add_library(World
 			src/GameLogic/DeadNature/Tree.cpp
 			src/GameLogic/GameLogic.cpp)
 add_library(Players 
-			src/GameLogic/Players/Player.cpp)
+			src/GameLogic/Players/Player.cpp
+			src/GameLogic/Players/Builder.cpp)
 
 add_library(Buildings 
-			src/GameLogic/Units/Buildings/Building.cpp
-			src/GameLogic/Units/Buildings/Home.cpp
-			src/GameLogic/Units/Buildings/Mine.cpp)		
+			src/GameLogic/Units/Buildings/Building.cpp)		
 			
 add_library(Graphic 								
 					src/Graphic/WindowStates/FileIO/FileInformation/FileInformation.cpp
@@ -41,6 +40,8 @@ add_library(Graphic
 					src/Graphic/WindowPrototypes/Render.cpp
 			)		
 
+add_library(Controller 
+				src/Controllers/Graphic.cpp)
 add_executable(Colonization main.cpp)
 
 target_link_libraries(Colonization World Noise Players Buildings Graphic)

@@ -7,52 +7,61 @@
 
 #include "Player.h"
 
-namespace Player {
+namespace Players {
 
-Player::Player(int iron, int copper, int wood, int gold) :
-		Iron(iron), Copper(copper), Wood(wood), Gold(gold) {
-	// TODO Auto-generated constructor stub
-
+Player::Player(int iron, int copper, int wood, int gold){
+	/*
+	 * i = iron
+	 * c = copper
+	 * g = gold
+	 * d diamond
+	 * c chrome
+	 * e etyrald
+	 * u uran
+	 * C coal
+	 * m magnesium
+	 * w wood
+	 * p citizens
+	 */
+	magazine.insert(std::pair<char,float>('i',iron));
+	magazine.insert(std::pair<char,float>('c',copper));
+	magazine.insert(std::pair<char,float>('g',gold));
+	magazine.insert(std::pair<char,float>('d',0));
+	magazine.insert(std::pair<char,float>('c',0));
+	magazine.insert(std::pair<char,float>('e',0));
+	magazine.insert(std::pair<char,float>('u',0));
+	magazine.insert(std::pair<char,float>('C',0));
+	magazine.insert(std::pair<char,float>('m',0));
+	magazine.insert(std::pair<char,float>('w',wood));
+	magazine.insert(std::pair<char,float>('p',100));
 }
+
 void Player::playerTick() {
-	citizens = 0;
-	for (Buildings::Home &e : Homes) {
-		citizens += e.getCitizens();
-	}
-	for (Buildings::Mine &e : Mines) {
-		switch (e.getMiningOreType()) {
-		case DeadNature::oreType::Chrome:
-			Chrome += e.gerResources();
-			break;
-		case DeadNature::oreType::Coal:
-			Coal += e.gerResources();
-			break;
-		case DeadNature::oreType::Copper:
-			Copper += e.gerResources();
-			break;
-		case DeadNature::oreType::Diamond:
-			Diamond += e.gerResources();
-			break;
-		case DeadNature::oreType::Ethyrald:
-			Ethyrald+= e.gerResources();
-			break;
-		case DeadNature::oreType::Gold:
-			Gold+= e.gerResources();
-			break;
-		case DeadNature::oreType::Iron:
-			Iron+= e.gerResources();
-			break;
-		case DeadNature::oreType::Magnesium:
-			Magnesium+= e.gerResources();
-			break;
-		case DeadNature::oreType::Uran:
-			Uran+=e.gerResources();
-			break;
-		}
-	}
+
 
 }
+void Player::setBuild(std::shared_ptr<std::vector<DeadNature::Ore>> ores,std::shared_ptr<World::Map> map){
+	builds.set(ores,map);
+}
 
+void Player::putBuilding(int x,int y,Units::Buildings::BuildingType ore){
+	bool canAfford = true;
+	for(std::pair<char,int> e:builds.price(ore,x,y))
+	{
+		if(magazine.find(e.first)->second>= e.second)
+		{
+			// empty intentionally
+		}
+		else
+			canAfford = false;
+	}
+	for(std::pair<char,int> e:builds.price(ore,x,y))
+		{
+			magazine.find(e.first)->second-= e.second;
+		}
+	StaticUnits.push_back(builds.CreateBuilding(ore,x,y));
+
+}
 Player::~Player() {
 	// TODO Auto-generated destructor stub
 }

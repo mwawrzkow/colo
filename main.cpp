@@ -2,13 +2,13 @@
 #include <cstdlib>
 #include <time.h>
 #include <iomanip>
-#include "src/GameLogic/GameLogic.h"
+#include "src/Controllers/Graphic.h"
 
 int main()
 {
 	std::cerr << "Here Magic Begins" << std::endl;
 	srand(time(NULL));
-	GameLogic::GameLogic logic(1000,1000,0.02f,0.5);
+	Game::GameLogic logic(1000,1000,0.02f,0.5);
 	std::cerr << "Done";
 
 	return 0;

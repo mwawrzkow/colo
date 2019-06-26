@@ -34,9 +34,12 @@ const int Map::getWidth() const {
 const int Map::getHeight() const {
 	return y;
 }
-const float Map::getPointValue(int x, int y) const {
+float Map::getPointValue(int x, int y) {
 	return heightMap.find(Position(x, y))->second;
 
+}
+float* Map::getEditablePointValue(int x ,int y){
+	return &heightMap.find(Position(x,y))->second;
 }
 
 Map::~Map() {

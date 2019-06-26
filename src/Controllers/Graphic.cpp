@@ -10,13 +10,16 @@
 namespace Window {
 
 GameController::GameController(Graphic::Render &window, IO::FileManager &settings,
-		std::string gamedir):SFML_Controler(window,settings,gamedir) {
+		std::string gamedir):Graphic::SFML_Controler(window,settings,gamedir) {
 	// TODO Auto-generated constructor stub
 
 }
 
 GameController::~GameController() {
 	// TODO Auto-generated destructor stub
+}
+void GameController::createGameStates(){
+
 }
 
 } /* namespace Player */

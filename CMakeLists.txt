@@ -38,13 +38,17 @@ add_library(Graphic
 					src/Graphic/WindowPrototypes/EventHandler.cpp
 					src/Graphic/WindowPrototypes/MSSFMLView.cpp
 					src/Graphic/WindowPrototypes/Render.cpp
+					
+				src/Controllers/Graphic.cpp
+				src/Controllers/Events.cpp
+				src/Controllers/Render.cpp
 			)		
 
-add_library(Controller 
-				src/Controllers/Graphic.cpp)
+add_library(IO
+			src/FileIOController.cpp) 
 add_executable(Colonization main.cpp)
 
-target_link_libraries(Colonization World Noise Players Buildings Graphic)
+target_link_libraries(Colonization World Noise Players Buildings Graphic  IO)
 if(SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
     target_link_libraries(Colonization ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})

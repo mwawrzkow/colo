@@ -9,6 +9,7 @@
 #define SRC_CONTROLLERS_GRAPHIC_H_
 #include "../GameLogic/GameLogic.h"
 #include "../Graphic/WindowPrototypes/MSSFMLView.h"
+#include "Events.h"
 namespace Window {
 
 class GameController :public Graphic::SFML_Controler{

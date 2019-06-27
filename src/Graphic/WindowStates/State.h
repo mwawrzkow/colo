@@ -36,7 +36,6 @@ public:
 	virtual void resetStates();
 	virtual GameState::State AskedState();
 public:
-	//Additional funcionation for Snake
 };
 
 } /* namespace Controller */

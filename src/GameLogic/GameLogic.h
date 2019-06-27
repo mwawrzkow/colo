@@ -14,16 +14,17 @@
 #include "DeadNature/Ore.h"
 #include "DeadNature/Tree.h"
 #include "Players/Player.h"
-namespace GameLogic {
+#include <memory>
+namespace Game{
 
 class GameLogic {
-	World::Map World;
-	std::vector<DeadNature::Ore>Ores;
-	std::map<std::pair<int,int>,DeadNature::Tree>Trees;
-	std::vector<Player::Player*>players;
+	std::shared_ptr<World::Map> World;
+	std::shared_ptr<std::vector<DeadNature::Ore>>Ores;
+	std::shared_ptr<std::map<std::pair<int,int>,DeadNature::Tree>>Trees;
+	std::vector<std::shared_ptr<Players::Player>>players;
 public:
 	GameLogic(const int, const int, float , const float);
-	void AddPlayer(Player::Player*);
+	void AddPlayer(std::shared_ptr<Players::Player>);
 	virtual ~GameLogic();
 };
 

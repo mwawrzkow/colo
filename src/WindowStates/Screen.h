@@ -7,10 +7,12 @@
 
 #ifndef SRC_WINDOWSTATES_SCREEN_H_
 #define SRC_WINDOWSTATES_SCREEN_H_
+#include "Screen/Buttons.h"
 #include "../Graphic/WindowStates/State.h"
 namespace State{
 
 class Screen :public Controller::State {
+	Tile::Button* button;
 public:
 	Screen(std::string,std::shared_ptr<Texture::Cache>TextureCache, bool*);
 	void CreateUnits();

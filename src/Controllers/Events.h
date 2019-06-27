@@ -11,8 +11,12 @@
 namespace EventManager {
 
 class Events :public SFML_Handlers::EventHandler{
+	sf::View* view;
+	void keypressed();
 public:
 	Events();
+	void setView(sf::View&);
+	void EventChecker();
 	virtual ~Events();
 };
 

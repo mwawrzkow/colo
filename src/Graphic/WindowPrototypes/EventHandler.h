@@ -24,11 +24,12 @@ protected:
 public:
 	EventHandler();
 	void setWindow(sf::RenderWindow&);
-	virtual void EventChecker();
+	virtual void EventChecker() = 0;
 	void setObjects(Controller::State&);
 	virtual ~EventHandler();
 	void closeGame();
-private:
+	virtual void setView(sf::View&) = 0 ;
+protected:
 	void mousePress();
 };
 

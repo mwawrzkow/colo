@@ -13,6 +13,7 @@ namespace DisplayManager {
 class Render :public Graphic::Render{
 public:
 	Render(sf::RenderWindow&);
+	void sendView();
 	virtual ~Render();
 };
 

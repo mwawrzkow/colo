@@ -13,15 +13,20 @@
 
 #include "../GameLogic/Controller.h"
 #include "../Graphic/WindowStates/State.h"
+#include "Game/Terrain.h"
 
 namespace GameWindow {
 
 class Game :public Controller::State  {
-	Logic::Controller World;
+	bool done = false;
+	Logic::Controller *World;
+	std::map<std::pair<int,int>,GameWindow::Terrain*>map;
 public:
 	Game(std::string,std::shared_ptr<Texture::Cache>TextureCache, bool*);
+	void runGame();
 	void CreateUnits();
 	void setUnits();
+	void update();
 	virtual ~Game();
 };
 

@@ -11,6 +11,9 @@
 namespace Logic{
 typedef std::pair<int,int> Position;
 typedef std::pair<Position,DeadNature::Tree> TreePosition;
+World::Map* Controller::getMap(){
+	return World.get();
+}
 Controller::Controller(const int Width, const int Height, float Waterlevel,
 		const float HillLevel):
 World(new World::Map(Width,Height,Waterlevel,HillLevel)),Ores(new std::vector<DeadNature::Ore>),Trees(new std::map<std::pair<int,int>,DeadNature::Tree>) {

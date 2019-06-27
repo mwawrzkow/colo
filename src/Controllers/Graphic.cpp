@@ -6,7 +6,6 @@
  */
 
 #include "Graphic.h"
-#include "../WindowStates/Game.h"
 namespace Window {
 
 GameController::GameController(Graphic::Render &window, IO::FileManager &settings,
@@ -27,18 +26,26 @@ void GameController::createGameStates(){
 							IO::Information::MENU_FILE_LIST).value,
 			TextureCache, &isAskingForChange);
 	states.push_back(screen);
-	window.renderQueue(*states.at(WindowState));
-	Event->setObjects(*states.at(WindowState));
-	GameWindow::Game* game = new GameWindow::Game(
+	game = new GameWindow::Game(
 			gamedir
 					+ settings.LoadFileInformation(
 							IO::Information::MENU_FILE_LIST).value,
 			TextureCache, &isAskingForChange);
+	states.push_back(game);
+	window.renderQueue(*states.at(WindowState));
+	Event->setObjects(*states.at(WindowState));
 }
 void GameController::stateOfView(){
 	if(WindowState == GameState::State::Exit)
 	{
 		window.getWindow().close();
+	}if(WindowState==GameState::State::Game)
+	{
+		window.renderQueue(*game);
+		Event->setObjects(*game);
+		game->runGame();
+		window.sendView();
+
 	}
 }
 } /* namespace Player */

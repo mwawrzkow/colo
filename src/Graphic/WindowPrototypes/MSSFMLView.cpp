@@ -25,7 +25,10 @@ void SFML_Controler::start() {
 	sf::Clock timer;
 	while (window.window.isOpen()) {
 		if (stateHasChanged)
+		{
 			stateOfView();
+			stateHasChanged = false;
+		}
 		if (!doesRenderThreadWork) {
 			try {
 				window.setEvent(*Event);

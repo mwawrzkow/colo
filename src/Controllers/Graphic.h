@@ -10,6 +10,7 @@
 #include "../GameLogic/Controller.h"
 #include "../Graphic/WindowPrototypes/MSSFMLView.h"
 
+#include "../WindowStates/Game.h"
 
 
 #include "../WindowStates/Screen.h"
@@ -22,6 +23,7 @@ public:
 			std::string gamedir);
 	virtual ~GameController();
 protected:
+	GameWindow::Game* game;
 	virtual void createGameStates();
 	void stateOfView();
 };

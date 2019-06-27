@@ -25,6 +25,7 @@ class Controller {
 public:
 	Controller(const int, const int, float , const float);
 	void AddPlayer(std::shared_ptr<Players::Player>);
+	World::Map* getMap();
 	virtual ~Controller();
 };
 

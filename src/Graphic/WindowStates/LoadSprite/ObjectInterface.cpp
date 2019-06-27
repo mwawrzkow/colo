@@ -28,6 +28,7 @@ void ObjectInterface::createSprite() {
 		Sprite.setTextureRect(
 				sf::IntRect(0, states[state].getStartingPos(), states[state].getWidth(),
 						states[state].getHeight()));
+	spriteUpdate();
 }
 void ObjectInterface::spriteUpdate() {
 	states[state].frameCheckOut(frame);

@@ -39,7 +39,8 @@ public:
 	void worldTick();
 	const int getWidth()const;
 	const int getHeight()const;
-	const float getPointValue(int,int) const;
+	float getPointValue(int,int);
+	float* getEditablePointValue(int,int);
 protected:
 	Weather stateOfTheAtmosfere;
 	float degree;

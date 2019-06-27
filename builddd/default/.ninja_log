@@ -1,0 +1,23 @@
+# ninja log v5
+0	648	1560868527588950516	CMakeFiles/Colonization.dir/main.cpp.o	4f3e63f6c27a5fbf
+1	669	1560868527608950589	CMakeFiles/World.dir/src/GameLogic/Map.cpp.o	d4f35af0838797f4
+669	812	1560868527702284266	libWorld.a	decedcffe1b3f36f
+1	859	1560868527785617906	CMakeFiles/Noise.dir/FastNoise.cpp.o	8af767b3034a8d55
+859	932	1560868527872284891	libNoise.a	1440b56be326a1ae
+932	1012	1560868527952285185	Colonization	c5e069076fc887e3
+1	466	1560868567755773383	CMakeFiles/Colonization.dir/main.cpp.o	4f3e63f6c27a5fbf
+466	548	1560868567835773711	Colonization	c5e069076fc887e3
+1	463	1560868586715852791	CMakeFiles/Colonization.dir/main.cpp.o	4f3e63f6c27a5fbf
+463	543	1560868586795853133	Colonization	c5e069076fc887e3
+0	469	1560868682672971823	CMakeFiles/Colonization.dir/main.cpp.o	4f3e63f6c27a5fbf
+469	552	1560868682752972233	Colonization	c5e069076fc887e3
+1	37	1560885946086479451	build.ninja	142f5a1d3df3eb23
+2	89	1560885946176480103	CMakeFiles/World.dir/src/GameLogic/DeadNature/Tree.cpp.o	2e130872e6b60c16
+2	711	1560885946799817952	CMakeFiles/World.dir/src/GameLogic/DeadNature/Ore.cpp.o	63775b3637a06046
+1	717	1560885946803151310	CMakeFiles/World.dir/src/GameLogic/Map/Map.cpp.o	db0f44129c78089b
+1	896	1560885946926485537	CMakeFiles/Colonization.dir/main.cpp.o	4f3e63f6c27a5fbf
+7	987	1560885947073153266	CMakeFiles/World.dir/src/GameLogic/GameLogic.cpp.o	25b3d9f466c4a820
+987	1144	1560885947166487275	libWorld.a	3cc97f4ea13cb86e
+1145	1238	1560885947326488434	Colonization	c5e069076fc887e3
+0	938	1561561574043537024	build.ninja	142f5a1d3df3eb23
+0	7	0	clean	a7c70eacb11a5051

@@ -1,3 +1,9 @@
-/home/mwawrzkow/Desktop/FinalProject/colonization_develop/buildd/CMakeFiles/rebuild_cache.dir
-/home/mwawrzkow/Desktop/FinalProject/colonization_develop/buildd/CMakeFiles/Colonization.dir
-/home/mwawrzkow/Desktop/FinalProject/colonization_develop/buildd/CMakeFiles/edit_cache.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/rebuild_cache.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/edit_cache.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/World.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/Noise.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/Buildings.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/Colonization.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/Players.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/Graphic.dir
+/home/marcin/Pulpit/FinalProject/colonization/buildd/CMakeFiles/IO.dir

@@ -18,10 +18,11 @@ namespace Graphic {
 class Render : Poco::Runnable{
 	Poco::Mutex mutex;
 	std::vector<ObjectInterface*>*toRender;
-	SFML_Handlers::EventHandler *event;
 	sf::Clock tmp;
 protected:
+	SFML_Handlers::EventHandler *event;
 	sf::RenderWindow &window;
+	sf::View view;
 public:
 	Render(sf::RenderWindow&);
 	void renderQueue(Controller::State&);
@@ -31,7 +32,10 @@ public:
 	~Render();
 	sf::RenderWindow &getWindow();
 	Poco::Mutex* getMutex();
+	virtual void sendView() = 0;
+
 	friend class SFML_Controler;
+
 };
 
 } /* namespace Objects */

@@ -1,36 +1,31 @@
 /*
  * Building.cpp
  *
- *  Created on: Jun 18, 2019
+ *  Created on: Jun 24, 2019
  *      Author: mwawrzkow
  */
 
 #include "Building.h"
 
+namespace Units {
 namespace Buildings {
-
-Building::Building(int health, int x, int y):health(health),x(x),y(y) {
+Building::Building(std::pair<int, int> position, std::pair<int, int> surface,
+		BuildingType type, int income, int maitance,int health) :
+		Pos(position), Surface(surface), type(type), inCome(income), maintenance(
+				maitance),health(health) {
 	// TODO Auto-generated constructor stub
 
 }
-void Building::dealDamage(int damage){
-	health -= damage;
-}
-const int Building::getHealth()const{
-	return health;
-}
-bool Building::isRuin(){
-	if(health <= 0)
-		return true;
-	return false;
-}
-const std::pair<int,int> Building::getPosition(){
-return std::pair<int,int>(x,y);
-}
-
 
 Building::~Building() {
 	// TODO Auto-generated destructor stub
 }
-
-} /* namespace Buildings */
+const int Building::getIncome()const
+{
+	return inCome;
+}
+const BuildingType Building::typeOfBuilding()const{
+	return type;
+}
+}
+} /* namespace Player */

@@ -1,0 +1,9 @@
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/rebuild_cache.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/edit_cache.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/World.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/Noise.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/Buildings.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/Colonization.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/Players.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/Graphic.dir
+/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64/CMakeFiles/IO.dir

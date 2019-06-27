@@ -1,0 +1,229 @@
+[
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/World.dir/src/GameLogic/Map/Map.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Map/Map.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Map/Map.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/World.dir/src/GameLogic/DeadNature/Ore.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Ore.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Ore.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/World.dir/src/GameLogic/DeadNature/Tree.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Tree.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Tree.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/World.dir/src/GameLogic/Controller.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Controller.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Controller.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Noise.dir/FastNoise.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/FastNoise.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/FastNoise.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Buildings.dir/src/GameLogic/Units/Buildings/Building.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Units/Buildings/Building.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Units/Buildings/Building.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++  -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DXML_DTD -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -isystem /usr/local/include  -g   -std=gnu++14 -o CMakeFiles/Colonization.dir/main.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/main.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/main.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Players.dir/src/GameLogic/Players/Player.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Player.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Player.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Players.dir/src/GameLogic/Players/Builder.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Builder.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Builder.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/FileIO/FileInformation/FileInformation.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/FileIO/FileInformation/FileInformation.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/FileIO/FileInformation/FileInformation.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/FileIO/FileManager.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/FileIO/FileManager.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/FileIO/FileManager.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/LoadSprite/texturebackend/Cache.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/texturebackend/Cache.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/texturebackend/Cache.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/LoadSprite/texturebackend/SpriteOptions.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/texturebackend/SpriteOptions.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/texturebackend/SpriteOptions.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/LoadSprite/ClickEvent.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/ClickEvent.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/ClickEvent.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/LoadSprite/Object.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/Object.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/Object.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/LoadSprite/ObjectInterface.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/ObjectInterface.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/ObjectInterface.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/LoadSprite/ObjectUpdate.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/ObjectUpdate.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/ObjectUpdate.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/LoadSprite/RenderClass.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/RenderClass.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/LoadSprite/RenderClass.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowStates/State.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/State.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowStates/State.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowPrototypes/EventHandler.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowPrototypes/EventHandler.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowPrototypes/EventHandler.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowPrototypes/MSSFMLView.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowPrototypes/MSSFMLView.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowPrototypes/MSSFMLView.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Graphic/WindowPrototypes/Render.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowPrototypes/Render.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Graphic/WindowPrototypes/Render.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Controllers/Graphic.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Controllers/Graphic.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Controllers/Graphic.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Controllers/Events.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Controllers/Events.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Controllers/Events.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/Controllers/Render.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/Controllers/Render.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/Controllers/Render.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/WindowStates/Screen.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Screen.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Screen.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/WindowStates/Screen/Buttons.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Screen/Buttons.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Screen/Buttons.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/WindowStates/Game.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Game.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Game.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/WindowStates/Game/Terrain.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Game/Terrain.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/WindowStates/Game/Terrain.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/GameLogic/Map/Map.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Map/Map.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Map/Map.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/GameLogic/DeadNature/Ore.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Ore.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Ore.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/GameLogic/DeadNature/Tree.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Tree.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/DeadNature/Tree.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/GameLogic/Controller.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Controller.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Controller.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/GameLogic/Players/Player.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Player.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Player.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/GameLogic/Players/Builder.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Builder.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Players/Builder.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/FastNoise.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/FastNoise.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/FastNoise.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/Graphic.dir/src/GameLogic/Units/Buildings/Building.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Units/Buildings/Building.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/GameLogic/Units/Buildings/Building.cpp"
+},
+
+{
+  "directory": "/home/marcin/Pulpit/FinalProject/colonization/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/IO.dir/src/FileIOController.cpp.o -c /home/marcin/Pulpit/FinalProject/colonization/src/FileIOController.cpp",
+  "file": "/home/marcin/Pulpit/FinalProject/colonization/src/FileIOController.cpp"
+}
+]

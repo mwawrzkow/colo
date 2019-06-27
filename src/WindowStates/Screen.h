@@ -12,12 +12,14 @@
 namespace State{
 
 class Screen :public Controller::State {
-	Tile::Button* button;
+	Tile::Button* Start;
+	Tile::Button* End;
 public:
 	Screen(std::string,std::shared_ptr<Texture::Cache>TextureCache, bool*);
 	void CreateUnits();
 	void setUnits();
 	virtual ~Screen();
+	void update();
 };
 
 } /* namespace DisplayManager */

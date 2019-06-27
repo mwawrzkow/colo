@@ -17,8 +17,8 @@
 #include "Builder.h"
 
 
-namespace Game {
-class GameLogic;
+namespace Logic {
+class Controller;
 } /* namespace Game */
 
 namespace Players {
@@ -49,7 +49,7 @@ public:
 	void putBuilding(int,int,Units::Buildings::BuildingType);
 protected:
 	void setBuild(std::shared_ptr<std::vector<DeadNature::Ore>>,std::shared_ptr<World::Map>);
-	friend class Game::GameLogic;
+	friend class Logic::Controller;
 };
 
 }

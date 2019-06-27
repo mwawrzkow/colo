@@ -6,14 +6,14 @@
  */
 
 #include "Graphic.h"
-
+#include "../WindowStates/Game.h"
 namespace Window {
 
 GameController::GameController(Graphic::Render &window, IO::FileManager &settings,
 		std::string gamedir):Graphic::SFML_Controler(window,settings,gamedir) {
 	Event = new EventManager::Events();
-	createGameStates();
 	Event->setWindow(window.getWindow());
+	createGameStates();
 	start();
 }
 
@@ -29,6 +29,16 @@ void GameController::createGameStates(){
 	states.push_back(screen);
 	window.renderQueue(*states.at(WindowState));
 	Event->setObjects(*states.at(WindowState));
+	GameWindow::Game* game = new GameWindow::Game(
+			gamedir
+					+ settings.LoadFileInformation(
+							IO::Information::MENU_FILE_LIST).value,
+			TextureCache, &isAskingForChange);
 }
-
+void GameController::stateOfView(){
+	if(WindowState == GameState::State::Exit)
+	{
+		window.getWindow().close();
+	}
+}
 } /* namespace Player */

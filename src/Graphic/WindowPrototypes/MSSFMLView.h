@@ -49,8 +49,8 @@ public:
 protected:
 	void stateChangeChecker();
 	virtual void createGameStates() = 0 ;
-private:
 	void stateOfView();
+private:
 	void event();
 	void update();
 };

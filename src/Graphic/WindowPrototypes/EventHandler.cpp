@@ -38,6 +38,12 @@ void EventHandler::mousePress() {
 		float starty = tmp->returnSprite()->getPosition().y;
 		float height = tmp->getSpriteOptions().getsHeight() + starty;
 		float width = tmp->getSpriteOptions().getsWidth() + startx;
+		if(x >= startx && x <= width)
+			if(y>=starty&&y<=height)
+			{
+				tmp->click();
+			}
+
 }
 }
 void EventHandler::setObjects(Controller::State &tmp) {

@@ -10,15 +10,16 @@
 namespace Tile {
 
 Button::Button(const Graphic::ObjectInterface& interface):Graphic::ObjectInterface(interface) {
-	createSprite();
 	// TODO Auto-generated constructor stub
-
+	createSprite();
 }
 void Button::update(){
+	spriteUpdate();
 
 }
 void Button::setPosition(float x ,float y){
-	Sprite.setOrigin(sf::Vector2f(x,y));
+	Sprite.setPosition(sf::Vector2f(x,y));
+
 }
 Button::~Button() {
 	// TODO Auto-generated destructor stub

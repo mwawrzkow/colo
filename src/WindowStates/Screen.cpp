@@ -21,12 +21,28 @@ void Screen::CreateUnits(){
 	for (int i = 0; i < Render.getQueue().size(); i++) {
 		if(Render.getQueue().at(i)->getSpriteOptions().getName() == availibeNames[0])
 		{
-			button = new Tile::Button(*Render.getQueue().at(i));
-			button->setPosition(100 , 100 );
-			Units.push_back(button);
+			Start = new Tile::Button(*Render.getQueue().at(i));
+			Start->setPosition(600 , 100 );
+			Units.push_back(Start);
+		}else if(Render.getQueue().at(i)->getSpriteOptions().getName() == availibeNames[1])
+		{
+			End = new Tile::Button(*Render.getQueue().at(i));
+			End->setPosition(600,300);
+			Units.push_back(End);
 		}
 	}
 
+}
+void Screen::update(){
+	State::update();
+	if(End->checkClick()){
+		askState = GameState::State::Exit;
+		*sendRequest = true;
+	}else if(Start->checkClick())
+	{
+		askState =GameState::State::Game;
+		*sendRequest = true;
+	}
 }
 void Screen::setUnits(){
 

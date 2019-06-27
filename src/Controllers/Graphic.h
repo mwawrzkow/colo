@@ -7,7 +7,7 @@
 
 #ifndef SRC_CONTROLLERS_GRAPHIC_H_
 #define SRC_CONTROLLERS_GRAPHIC_H_
-#include "../GameLogic/GameLogic.h"
+#include "../GameLogic/Controller.h"
 #include "../Graphic/WindowPrototypes/MSSFMLView.h"
 
 
@@ -23,6 +23,7 @@ public:
 	virtual ~GameController();
 protected:
 	virtual void createGameStates();
+	void stateOfView();
 };
 
 } /* namespace Player */

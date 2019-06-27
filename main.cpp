@@ -18,7 +18,5 @@ int main(int argc, char **argv)
 						settings.value_INT(IO::Information::HEIGHT)), "Colonization");
 	DisplayManager::Render render(toController);
 	Window::GameController Window(render, settings, ConfigurationFilePath);
-	Window.start();
-
 	return 0;
 }

@@ -42,13 +42,16 @@ add_library(Graphic
 				src/Controllers/Graphic.cpp
 				src/Controllers/Events.cpp
 				src/Controllers/Render.cpp
-			)		
+				
+				src/WindowStates/Screen.cpp
+			)
 
 add_library(IO
-			src/FileIOController.cpp) 
+			src/FileIOController.cpp)
+
 add_executable(Colonization main.cpp)
 
-target_link_libraries(Colonization World Noise Players Buildings Graphic  IO)
+target_link_libraries(Colonization World Noise Players Buildings Graphic IO)
 if(SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
     target_link_libraries(Colonization ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})

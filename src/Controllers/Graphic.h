@@ -9,6 +9,10 @@
 #define SRC_CONTROLLERS_GRAPHIC_H_
 #include "../GameLogic/GameLogic.h"
 #include "../Graphic/WindowPrototypes/MSSFMLView.h"
+
+
+
+#include "../WindowStates/Screen.h"
 #include "Events.h"
 namespace Window {
 

@@ -38,24 +38,6 @@ void EventHandler::mousePress() {
 		float starty = tmp->returnSprite()->getPosition().y;
 		float height = tmp->getSpriteOptions().getsHeight() + starty;
 		float width = tmp->getSpriteOptions().getsWidth() + startx;
-	if(x <= width && x >= startx && y<= height && y>=starty)
-	{
-		switch (WindowEvent.mouseButton.button){
-		case sf::Mouse::Right:
-			if(tmp->ClickEvent()->isRClicable)
-			{
-				tmp->updateState("rclick");
-			}
-			break;
-		case sf::Mouse::Left:
-			if(tmp->ClickEvent()->isClicable)
-			{
-				tmp->updateState("click");
-			}
-			break;
-		}
-	}
-
 }
 }
 void EventHandler::setObjects(Controller::State &tmp) {

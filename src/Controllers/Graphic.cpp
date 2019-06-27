@@ -26,6 +26,9 @@ void GameController::createGameStates(){
 					+ settings.LoadFileInformation(
 							IO::Information::MENU_FILE_LIST).value,
 			TextureCache, &isAskingForChange);
+	states.push_back(screen);
+	window.renderQueue(*states.at(WindowState));
+	Event->setObjects(*states.at(WindowState));
 }
 
 } /* namespace Player */

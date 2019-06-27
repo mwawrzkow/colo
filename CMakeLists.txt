@@ -44,6 +44,7 @@ add_library(Graphic
 				src/Controllers/Render.cpp
 				
 				src/WindowStates/Screen.cpp
+				src/WindowStates/Screen/Buttons.cpp
 			)
 
 add_library(IO

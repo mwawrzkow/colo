@@ -1,0 +1,9 @@
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/rebuild_cache.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/edit_cache.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/World.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/Noise.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/Buildings.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/Colonization.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/Players.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/Graphic.dir
+/home/mwawrzkow/Desktop/FinalProject/colonization_develop/build/cmake.debug.linux.x86_64.1/CMakeFiles/IO.dir
